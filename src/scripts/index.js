@@ -1,13 +1,14 @@
-import '../styles/style.css';
-import '../styles/reset.css';
-import '../styles/fonts.css';
+import "../styles/style.css";
+import "../styles/reset.css";
+import "../styles/fonts.css";
+import homeRender from "../scripts/home";
 
-import Icon from '../images/book1.avif';
-"use strict";
-const myIcon = new Image();
+(function navRender() {
+	const home = document.querySelector(".home");
 
-myIcon.src = Icon;
+	home.addEventListener("click", changeDom);
 
-const element = document.createElement('div');
-element.appendChild(myIcon);
-document.body.appendChild(element)
+	function changeDom() {
+		homeRender();
+	}
+})()

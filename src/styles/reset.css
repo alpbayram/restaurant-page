@@ -14,6 +14,7 @@
 	--padding-main: 0.5rem clamp(0.5rem, 1.5vw, 3rem);
 	--gap-main: clamp(0.5rem, 1vw, 1.5rem);
 	--card-width: 38rem;
+	--second-color:#f0b551;
 }
 hr {
 	border: none;
