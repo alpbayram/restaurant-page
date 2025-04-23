@@ -15,6 +15,7 @@
 	--gap-main: clamp(0.5rem, 1vw, 1.5rem);
 	--card-width: 38rem;
 	--second-color:#f0b551;
+	--default-backdrop:blur(3px) brightness(75%) sepia(3%);
 }
 hr {
 	border: none;

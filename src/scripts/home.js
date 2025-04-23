@@ -1,23 +1,23 @@
 import Image from "../images/cookie-hero-low.avif";
 
 export default function renderHome() {
-
-	const background = document.querySelector(".grid-container");
-    const url = `url("${Image}")`;
-	background.style.backgroundImage = url
-
-
 	const content = document.querySelector("#content");
+	const gridContainer = document.querySelector(".grid-container");
+    const url = `url("${Image}")`;
+	gridContainer.style.backgroundImage = url
+
+	// linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)),
+	
 	const heroAlignContainer = document.createElement("div");
 
 	const heroContainer = document.createElement("div");
 	const heroText1 = document.createElement("h6");
 	const heroText2 = document.createElement("h1");
 	const heroText3 = document.createElement("h6");
-    content.classList.add("loaded")
+    
    
 
-	content.dataset.status = "hero";
+	gridContainer.dataset.status = "home";
 
 	heroAlignContainer.classList.add("hero-align-container");
 	heroContainer.classList.add("hero-container");
