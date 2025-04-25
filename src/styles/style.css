@@ -1,5 +1,5 @@
 * {
-	outline: 1px solid black;
+	/* outline: 1px solid black; */
 }
 body {
 }
@@ -33,6 +33,7 @@ footer {
 	grid-column: 1/1;
 	grid-row: 1/ 2;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 	/* backdrop-filter: var(--default-backdrop); */
@@ -92,6 +93,7 @@ footer {
 .nav-menu {
 	display: flex;
 	gap: 5vw;
+	flex-wrap: wrap;
 }
 .grid-container[data-status="home"] #content {
 	z-index: 1;

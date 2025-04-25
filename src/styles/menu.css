@@ -1,6 +1,6 @@
 .grid-container[data-status="menu"] {
 	display: grid;
-    
+
 	grid-template-columns: 1fr;
 	grid-template-rows: minmax(8rem, auto) 1fr;
 }
@@ -10,6 +10,9 @@
 	grid-row: 1 / 3;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	container-name: drinks-foods;
+	container-type: inline-size;
 }
 .menu-header {
 	position: relative;
@@ -24,6 +27,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	align-self: stretch;
 	& h1 {
 		z-index: 1;
 	}
@@ -36,26 +40,33 @@
 }
 .menu-container {
 	display: grid;
-	grid-template-columns: min(100%, 33rem) min(100%, 33rem);
-	grid-template-rows: auto auto;
-
-	justify-content: center;
-	margin-top: 8rem;
-	padding: clamp(1.5rem, 3vw, 3rem);
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	grid-template-rows: auto;
 	column-gap: 8rem;
+	margin-top: 8rem;
+	
+	width: min(100%, 90rem);
+	
+	& .menu-drinks {
+		/* justify-self: flex-start; */
+	}
+	& .menu-foods {
+		/* justify-self: flex-end; */
+	}
 }
+
 .menu-drinks,
 .menu-foods {
 	position: relative;
-	grid-column: 1/2;
-	grid-row: 1/2;
+	/* max-width: 30rem; */
 	display: flex;
 	flex-direction: column;
+	min-width: 30rem;
 	row-gap: 2rem;
 	&::before {
 		content: "";
 		position: absolute;
-		width: 1px;
+		/* width: 1px; */
 		height: 100%;
 
 		left: 37rem;
@@ -65,19 +76,22 @@
 	&::after {
 		content: "";
 		position: absolute;
-		width: 1px;
+		/* width: 1px; */
 		height: 100%;
 		left: -4rem;
 
 		background-color: #c8c4c5;
 	}
 }
+
 .menu-drinks-header,
-.menu-foods-header {
+.menu-foods-header,
+.full-header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 0.7rem;
+	text-align: center;
 	& h6 {
 		font-size: 0.8em;
 		color: rgb(197, 151, 100);
@@ -86,29 +100,34 @@
 .drink,
 .food {
 	display: flex;
-	justify-content: flex-start;
 
 	max-height: 6rem;
 
-	gap: 1rem;
+	gap: clamp(0.5rem, 1vw, 2rem);
 	font-size: 1.8rem;
 }
 .drink-text-container,
 .food-text-container {
 	margin-top: 0.7rem;
 	margin-bottom: 0.7rem;
-	justify-content: space-between;
+	justify-content: space-around;
 	display: flex;
 	flex-direction: column;
-	gap: 0.8rem;
-
+min-width: 0;
+	flex-basis: 60%;
+	flex-grow: 0;
 	& .drink-name,
 	.food-name {
 		font-family: serif;
 		font-size: 0.8em;
+		text-wrap: nowrap;
+		overflow-y: auto;
+		flex-shrink: 0;
 	}
 	& .drink-info,
 	.food-info {
+		white-space: nowrap;
+		overflow-y: auto;
 		color: #363636;
 		opacity: 0.6;
 		font-size: 0.6em;
@@ -117,6 +136,12 @@
 .drink-img,
 .food-img {
 	height: 100%;
+	display: flex;
+	align-items: center;
+	min-width: 3rem;
+
+	flex-basis: max-content;
+	flex-shrink: 1;
 }
 .drink-img img,
 .food-img img {
@@ -132,25 +157,102 @@
 	align-self: flex-start;
 	font-size: 0.8em;
 }
-.menu-foods {
-	grid-column: 2/ 3;
-	grid-row: 1/2;
+.full-header {
+	color: rgb(197, 151, 100);
+	& h1 {
+		font-size: 4rem;
+	}
 }
 .menu-full {
 	margin-top: 8rem;
-	grid-column: 1/3;
-	grid-row: 2/3;
+	width: min(100%, 90rem);
+
 	display: flex;
+	row-gap: 2rem;
 	flex-direction: column;
 }
 .full-container {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
-	justify-content: center;
+	column-gap: 1.5rem;
+	
+	justify-content: space-between;
+	row-gap: 3rem;
 }
 .full-item {
-	flex-basis: 33%;
+	flex-basis: 30%;
+	row-gap: 1rem;
+	
 	flex-grow: 1;
-	max-width: 20rem;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.4rem;
+	min-width: 20rem;
+}
+.full-text-container {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 1rem;
+	align-items: center;
+	& .full-name {
+		flex-grow: 1;
+		flex-shrink: 1;
+		font-family: serif;
+		font-size: 0.8em;
+		white-space: nowrap;
+		
+		overflow-y: auto;
+	}
+	& .full-price {
+		flex-basis: min-content;
+		flex-shrink: 0;
+		font-size: 0.8em;
+		font-family: Norse;
+		font-weight: bold;
+	}
+}
+.full-info {
+	color: #363636;
+	opacity: 0.6;
+	font-size: 0.6em;
+	height: 4.86rem;
+	overflow: auto;
+	
+}
+.full-img {
+	width: 100%;
+}
+.full-img img {
+	width: 100%;
+	aspect-ratio: 1.5;
+  object-fit: cover;
+
+}
+@container drinks-foods (max-width: 68rem) {
+	.drink,
+	.food {
+		font-size: 1.8rem;
+	}
+	.full-container{
+		padding: 0 4rem;
+	}
+	.full-item{
+		font-size: 1.8rem;
+	}
+	.menu-foods{
+		margin-top: 8rem;
+	}
+	.menu-foods, .menu-drinks {
+		
+		padding: 0 4rem;
+	}
+	.menu-container .menu-foods {
+		margin-top: 8rem;
+	}
+	.full-container {
+		justify-content: center;
+	}
+	.menu-container {
+		justify-content: center;
+	}
 }
