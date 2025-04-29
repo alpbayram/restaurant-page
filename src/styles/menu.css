@@ -265,6 +265,10 @@
 	.drink,
 	.food {
 		font-size: 1.8rem;
+		& .drink-info{
+			font-size: 0.50em;
+			overflow: hidden;
+		}
 	}
 	
 	.full-item {
@@ -290,6 +294,9 @@
 	.drink,
 	.food {
 		font-size: 1.6rem;
+		& .drink-info{
+			max-height: 2.64rem;
+		}
 	}
 	.menu-container {
 		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -315,4 +322,7 @@
 @container drinks-foods (max-width: 24rem) {.drink,
 	.food {
 		font-size: 1.4rem;
+		& .drink-info{
+			max-height: 2.31rem;
+		}
 	}}

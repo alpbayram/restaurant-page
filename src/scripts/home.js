@@ -9,6 +9,7 @@ export default function renderHome() {
 		}
 		
 	const url = `url("${Image}")`;
+	
 	gridContainer.style.backgroundImage = url;
 
 	// linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)),
@@ -32,7 +33,7 @@ export default function renderHome() {
 	heroButton.classList.add("reservation")
 	heroButtonContainer.classList.add("reservation-container")
 	heroText1.textContent = "WELCOME TO";
-	heroText2.textContent = "SEZİŞ COOKIEŞ";
+	heroText2.textContent = "SEZI COOKIES";
 	heroText3.textContent = "Cookie. Coffe. Tea. Sweets.";
 	heroButton.textContent="RESERVATION"
 	content.appendChild(heroAlignContainer);

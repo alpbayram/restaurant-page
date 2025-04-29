@@ -19,7 +19,7 @@ export default function renderAbout() {
 		aboutHeader.classList.add("about-header");
 		aboutHeader.style.backgroundImage = url;
 		const aboutHeaderText = document.createElement("h1");
-		aboutHeaderText.textContent = "ABOUT";
+		aboutHeaderText.textContent = "ABOUT US";
 		content.appendChild(aboutHeader);
 		aboutHeader.appendChild(aboutHeaderText);
 
