@@ -46,7 +46,7 @@ new Menu(
 );
 new Menu(
 	"Hazelnut Mocha",
-	"$$4.50",
+	"$4.50",
 	"Espresso, chocolate, hazelnut syrup, whipped cream",
 	drink3,
 	"drink"
