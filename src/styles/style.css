@@ -11,7 +11,11 @@ h1 {
 	font-family: serif;
 	font-weight: normal;
 }
-
+.grid-container{
+	position: relative;
+	min-height: 100svh;
+	display: grid;	
+}
 .grid-container[data-status="home"] {
 	position: relative;
 	min-height: 100svh;
